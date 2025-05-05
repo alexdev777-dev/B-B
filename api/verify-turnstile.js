@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+  export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: "Method not allowed" });
   }
@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     const secret = '0x4AAAAAABZIICZCpnFR5w-RZcVFsuk7y4k';
 
     if (!token) {
-      return res.status(400).json({ error: "No Token" });
+      return res.status(400).json({ error: "Token ausente" });
     }
 
     const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
@@ -29,3 +29,4 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: "Internal server error" });
   }
 }
+
