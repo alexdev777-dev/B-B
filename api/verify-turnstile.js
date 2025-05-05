@@ -1,6 +1,6 @@
 export default async function handler(req, res) {
   const token = req.body['cf-turnstile-response'];
-  const secret = 'SUA_SECRET_KEY'; // sua chave secreta da Cloudflare
+  const secret = '0x4AAAAAABZIICZCpnFR5w-RZcVFsuk7y4k'; // Key
 
   const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
     method: 'POST',
